@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Document
+    link(href="https://file.myfontastic.com/2TAgKThpe7hbSRKLZf6ZGT/icons.css" rel="stylesheet")
+    link(rel="stylesheet", href="css/main.css")
+  body
+    header.main-header
+      .container.container--flex
+        .logo-container.column.colum--50
+          .logo Laboratorio Clinico
+        .main-header__contacInfo.column.colum--50
+          p.main-header__contacInfo__phone
+            span.icon-phone 999-999-999
+          p.main-header__contacInfo__address
+            span.icon-location Urb Los Cerritos 123-Ica, Guatemala
+    nav.main-nav
+      .container.container--flex
+        span.icon-menu#btnmenu
+        ul.menu#menu
+          li.menu__item
+            a.menu__link.menu__link--select(href="/") Inicio
+          li.menu__item
+            a.menu__link(href="/") Nosotros
+          li.menu__item
+            a.menu__link(href="/") Galeria
+          li.menu__item
+            a.menu__link(href="/") Contacto
+        .social-icon
+          a.social-icon__link(href="/")
+            span.icon-facebook
+          a.social-icon__link(href="/")
+            span.icon-twitter
+          a.social-icon__link(href="/")
+            span.icon-email
+    section.banner
+      img.banner__img(src="img/banner.jpg", alt="banner")
+      .banner__content Inicia Sesion
+        div.container--flex1
+          a.btnmedico(href="/login-m") Medico
+          a.btnpaciente(href="/login-p") Paciente
+    main.main 
+      section.group.group--color  
+        .container
+          h2.main__title Bienvenido a Nuestra Laboratorio Clinico
+          p.main__txt Lorem ipsum dolor sit amet.
+    block main
+    script(src="js/script.js")

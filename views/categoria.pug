@@ -1,0 +1,12 @@
+extends home/layout_home
+block main-c
+  section.banner
+    img.banner__img(src="../../img/banner.jpg", alt="banner")
+    .banner__content
+      form.form(action="/paciente", method="post")
+        if (result.length)
+          .alert=result 
+        h1.form__titulo Sub-Categoria Examen
+        .container-inputs
+          each rows1 in rows
+            a.input.btn-enviar(href="/examen/"+rows1.ID_STE) #{rows1.TITULO_PRE_STP}

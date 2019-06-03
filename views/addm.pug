@@ -1,0 +1,20 @@
+extends home/layout_home
+block mainm
+  section.banner
+    img.banner__img(src="img/banner.jpg", alt="banner")
+    .banner__content
+      form.form(action="/radiologo", method="post")
+        if (result.length)
+          .alert=result 
+        h1.form__titulo Crear Radiologo
+        .container-inputs
+          input.input.input-100(type="text", name="i_dpi_m", placeholder="DPI")
+          select.input.input-100(name="i_rol_users")
+            option(value="no") Selecione Rol
+            option(value="Admin") Admin
+            option(value="Medico") Medico 
+          input.input.input-48(type="text", name="i_nombre_m", placeholder="Nombre")
+          input.input.input-48(type="text", name="i_apellido_m", placeholder="Apellido")
+          input.input.input-48(type="email", name="i_email_u", placeholder="email")
+          input.input.input-48(type="password", name="i_password_u", placeholder="Password")
+          input.input.btn-enviar(type="submit" value="Guardar") 

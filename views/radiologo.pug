@@ -1,0 +1,25 @@
+extends home/layout_home
+block mainm
+  .container
+    if (rows.length)
+      table.table
+        tr
+          th DPI
+          th NOMBRE
+          th APELLIDO
+          th Email
+          th(colspan="2")
+            form(method="GET" action="/agregarm")
+              input.button.add(type="submit", value="Agregar")
+        each rows1 in rows
+          tr
+            td #{rows1.DPI_M}
+            td #{rows1.NOMBRE_M}
+            td #{rows1.APELLIDO_M}
+            td #{rows1.EMAIL}
+            td
+              form(method="GET" action="/editar/#{rows1.DPI_M}")
+                input.button.edit(type="submit", value="Editar")
+            td
+              form(method="POST" action="/eliminar/#{rows1.DPI_M}")
+                input.button.delete(type="button", value="Eliminar")

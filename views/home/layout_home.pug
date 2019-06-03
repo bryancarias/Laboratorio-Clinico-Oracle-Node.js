@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Document
+    link(href="https://file.myfontastic.com/2TAgKThpe7hbSRKLZf6ZGT/icons.css" rel="stylesheet")
+    link(rel="stylesheet", href="../../css/main.css")
+  body
+    header.main-header.color--gris
+      .container.container--flex
+        .logo-container.column.colum--50
+          .logo Laboratorio Clinico
+        .main-header__contacInfo.column.colum--50
+          p.main-header__contacInfo__phone
+            span.icon-phone 999-999-999
+          p.main-header__contacInfo__address
+            span.icon-location Urb Los Cerritos 123-Ica, Guatemala
+    if (user.NROL == 'Admin') 
+      nav.main-nav
+        .container.container--flex
+          span.icon-menu#btnmenu
+          ul.menu#menu
+            li.menu__item
+              a.menu__link(href="/radiologo")  Radiologo
+            li.menu__item
+              a.menu__link(href="/paciente")  Pacientes
+            li.menu__item
+              a.menu__link(href="/tipoexamen") Crear Examenes
+          .social-icon
+            a.social-icon__link(href="/perfil")
+              span Perfil
+            a.social-icon__link(href="/logout")
+              span Cerrar
+      block mainm
+      block main-a
+      block main-c
+      block main
+      block main-e
+    if (user.NROL == 'Medico') 
+      nav.main-nav
+        .container.container--flex
+          span.icon-menu#btnmenu
+          ul.menu#menu
+            li.menu__item
+              a.menu__link(href="/paciente") Ingresar Pacientes
+            li.menu__item
+              a.menu__link(href="/perfil") Crear Examenes
+          .social-icon
+            a.social-icon__link(href="/perfil")
+              span Perfil
+            a.social-icon__link(href="/logout")
+              span Cerrar Sesion
+      block main-m
+      block main
+    if (user.NROL == 'Paciente') 
+      nav.main-nav
+        .container.container--flex
+          span.icon-menu#btnmenu
+          ul.menu#menu
+            li.menu__item
+              a.menu__link(href="/perfil") Ver Examen
+          .social-icon
+            a.social-icon__link(href="/perfil")
+              span Perfil
+            a.social-icon__link(href="/logout")
+              span Cerrar Sesion
+      block main-p
+    script(src="../../js/script.js")

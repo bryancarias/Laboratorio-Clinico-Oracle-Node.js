@@ -1,0 +1,32 @@
+extends home/layout_home
+block main-c
+  form.form(action="/examen", method="post")
+    if (result.length)
+      .alert=result 
+    h1.form__titulo Crear Examen
+    .container-inputs
+      select.input.input-48(name="DPI_P")
+        option(value="no")  Dpi Paciente
+        each p in paciente
+          option(value=""+p.DPI_P) #{p.DPI_P}
+      select.input.input-48(name="DPI_MF")
+        option(value="no")  Dpi Medico Referente
+        each m in medico
+          option(value=""+m.DPI_MF) #{m.DPI_MF}
+      label.color-black.input-48(for="") Titulo
+      label.color-black.input-48(for="") Diagnostico
+      textarea.input.input-48(name="TITUTLO_E", cols="5", rows="5") #{rows[0].TITULO_PRE_STP}
+      textarea.input.input-48(name="DIAGNOSTICO_E", cols="5", rows="5") #{rows[0].DIAGNOSTICO_PRE_STP}
+      label.color-black.input-48(for="") Conclusion
+      label.color-black.input-48(for="") Comentario
+      textarea.input.input-48(name="CONCLUSION_E", cols="5", rows="5") #{rows[0].CONCLUSION_PRE_STP}
+      textarea.input.input-48(name="COMENTARIO_E", cols="5", rows="5") #{rows[0].COMENTARIO_PRE_STP}
+      input.input.input-48(type="datetime-local", name="FECHA_E")
+      select.input.input-48(name="ESTADO_E")
+        option(value="no") Select Estado
+        option(value="N") No Terminado
+        option(value="S") Terminado
+      input.input.input-48(type="number", name="PRECIO_E", placeholder="Precio")
+      input.input-100(type="hidden", name="ID_STE" value=""+rows[0].ID_STE)
+      input.input-100(type="hidden", name="DPI_M" value=""+user.DPI_M)
+      input.input.btn-enviar(type="submit" value="Guardar") 

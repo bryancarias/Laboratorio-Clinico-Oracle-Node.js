@@ -1,0 +1,29 @@
+extends home/template
+block main
+	.ed-container
+		.ed-item.l-50
+			div.mensaje
+				if (signupMessage.length)
+					.alert.alert-danger=signupMessage
+				if (loginMessage.length)
+					.alert.alert-danger=loginMessage
+		.ed-item.l-50
+			div.mensaje
+				if (signupMessage.length)
+					.alert.alert-danger=signupMessage
+				if (loginMessage.length)
+					.alert.alert-danger=loginMessage
+		.ed-item.l-50
+			form.form(action="/login", method="post")
+				h1.title Medico
+				input.input(type="email", name="email" placeholder="Ingrese Correo Electronico")
+				input.input(type="password", name="password" placeholder="Ingrese Password")
+				input(type="hidden", name="mp" value="m")
+				button.btnEntar(type="submit") Entrar
+		.ed-item.l-50
+			form.form(action="/login", method="post")
+				h1.title Paciente
+				input.input(type="email", name="email" placeholder="Ingrese Correo Electronico")
+				input.input(type="password", name="password" placeholder="Ingrese Password")
+				input(type="hidden", name="mp" value="p")
+				button.btnEntar(type="submit") Entrar

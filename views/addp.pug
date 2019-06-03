@@ -1,0 +1,21 @@
+extends home/layout_home
+block main
+  section.banner
+    img.banner__img(src="img/banner.jpg", alt="banner")
+    .banner__content
+      form.form(action="/paciente", method="post")
+        if (result.length)
+          .alert=result 
+        h1.form__titulo Crear Paciente
+        .container-inputs
+          input.input.input-48(type="text", name="i_dpi_p", placeholder="DPI")
+          input.input.input-48(type="number", name="i_edad_p", placeholder="Edad")
+          select.input.input-100(name="i_sexo_p")
+            option(value="no") Selecione Sexo
+            option(value="M") Masculino
+            option(value="F") Femenino
+          input.input.input-48(type="text", name="i_nombre_p", placeholder="Nombre")
+          input.input.input-48(type="text", name="i_apellido_p", placeholder="Apellido")
+          input.input.input-48(type="email", name="i_email_u", placeholder="email")
+          input.input.input-48(type="text", name="i_password_u", placeholder="Password")
+          input.input.btn-enviar(type="submit" value="Guardar") 

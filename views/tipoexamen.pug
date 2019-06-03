@@ -1,0 +1,12 @@
+extends home/layout_home
+block main-e
+  section.banner
+    img.banner__img(src="img/banner.jpg", alt="banner")
+    .banner__content
+      form.form(action="/categoria", method="post")
+        if (result.length)
+          .alert=result 
+        h1.form__titulo Categoria Examen
+        .container-inputs
+          each rows1 in rows
+            a.input.btn-enviar(href="/categoria/"+rows1.ID_TE) #{rows1.NOMBRE_TE}
